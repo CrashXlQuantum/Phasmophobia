@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phasmophobia</title>
+  <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background-image: url('../img/nightmare-rain.gif');">
+<br>
+
+
+        <div class="container">
+    <div class="inner">
+      <a href="../index.html" class="home"><img src="../img/home.png" alt="" width="80px"></a>
+      <style>
+        .home{
+          position: fixed;
+          top: 0; left: 0;
+          opacity: 0.7;
+          z-index: 100;
+        }
+      </style>
+
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Дух</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Дух</b> - не атакует 3 минуты после благовония, так же он более активный когда у него в комнате есть игрок.</h3>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Мираж</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Мираж</b> - не наступает на соль, иногда телепортируется к игроку без охоты и ивентов, при телепортации к игроку начинает работать Детектор ЭМП.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Фантом</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Фантом</b> - становиться невидемым когда его фотографируют, иногда телепортируется к игроку без охоты и ивентов, Детектор ЭМП заработает в месте от куда он телепортировался, в охоте почти всегда невидимый.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Полтергейст</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Полтергейст</b> - активный вид призрака, может сделать взрыв предметов если положить много в одном месте, что снижает рассудок игроку. Во время охоты на много чаще раскидывает предметы</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Банши</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Банши</b> - может прийти к игроку даже с другой части карты, когда она идет к игроку может наступить на соль или активировать датчики движения, имеет уникальный крик в направленый микрофон. Когда игроков много она выберает одну цель и всегда гониться только за ней пока не убьет, во время охоты не убьет других игроков кроме своей цели.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Джинн</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Джинн</b> - не может выключить щиток, так же когда щиток включен ускаряется по прямой видя игрока, может посадить рассудок игрокам поблизости от щитка если использует свою способность.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Мара</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Мара</b> - может моментально выключить свет в комнате когда игрок его включает, очень агрессивная в темноте и может начать охоту с 60% рассудка и если включен свет в комнате то с 40%, любит делать ивенты где лопает лампочки.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Ревенант</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Ревенант</b> - уникален только в охоте, когда игрок не проявляет актив то Ревенант движиться очень медленно, однако стоит игроку включить оборудование или попасть на глаза, Ревенант тут же ускориться и невероятно быстро добежит до последнего места где был игрок.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Тень</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Тень</b> - атакует с 35% рассудка, когда 1 и более игрококов находяться в его комнате он перестает проявлять сильный актив и атаковать.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Демон</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Демон</b> - может начать охоту с 75% рассудка, однако есть способность в любой момент, даже на 100%. После благовония он не может начать охоту только минуту.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Юрэй</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Юрэй</b> - закрывает дверь сразу до щелчка не показываясь сажая рассудок, единственный призрак способный трогать входную дверь без ивента или охоты.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Они</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Они</b> - он не использует воздушный гост ивент, это ивент в котором вместо модельки призрака летит белое облако. Во время охоты почти всегда виден.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Ёкай</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Ёкай</b> - может начать охоту с 80% рассудка если в его комнате много разговаривать. Во время охоты радиус его слуха сокращен до 2.5м, практически глухой и может не заметить как у вас работает фонарь или если вы бегаете.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Ханту</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Ханту</b> - во время охоты если щиток включен он медленный там где включен свет или тепло, там где холодно он очень быстрый, с выключеным щитком он быстрый везде, так как везде холодно. Вообще не ускаряется видя игрока. Чаще задувает свечи.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Горё</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Горё</b> - виден на лазерном проекторе только при просмотра через камеру. Он никогда не меняет свою любимую комнату</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Мюлинг</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Мюлинг</b> - много разговаривает по направленому микрофону, во время охоты его хуже слышно, фонарь моргает только в тот момент когда слышно его шаги.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Онрё</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Онрё</b> - может начать охоту с 100% рассудка если потушит первые 3 свечи. Чаще задувает свечи. Не может начать охоту пока не задует свечи в комнате. Охоту начинает с 60% рассудка. При задувании свечи распятие может не сработать, а охота начнется, если распятие было использовано, но свеча горит, значит это не Онрё. Он может одновременно затушить 2 свечи.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Близнецы</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Близнецы</b> - активный вид призрака, может сделать 2 взаимодействия в разных частях карты, во время охоты братья близницы могут меняться местами, один из них чуть медленее обычного призрака, другой чуть быстрее обычного призрака (не меняются во время охоты).</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Райдзю</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Райдзю</b> - может начать охоту с 65% рассудка если рядом есть включенное оборудование. Быстрый около включенного оборудование, если включить фонарь рядом с Райдзю он ускориться. Фонарь может лагать даже если шаги не слышно.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Обакэ</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Обакэ</b> - имеет уникальцый отпечаток с 6 пальцами, с шансом в 20% может скрыть отпечатки. Во время охоты с 35% шансом может во время охоты поменять модельку призрака на пол секунды.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Мимик</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Мимик</b> - копирует других призраков, скопируя самого себя он бездействует, у него имеется доп. улика "Призрачный огонёк", обязательная улика.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Морой</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Морой</b> - на большом рассудке медленный, чем меньше рассудка тем быстрее, радиоприёмник обязательная улика, когда он отвечает в радиоприёмник или в направленный микрофон накладывает проклятие, рассудкок падает в 2 раза быстрее и парадет даже при свечах или свете, можно снять успокоительным.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Деоген</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Деоген</b> - имеет уникальный ответ в радиоприемник, шипение (обязательная улика). Во время охоты всегда знает где игрок, очень быстро бежит к игроку, чем ближе к игроку тем медленее он. Начинает охоту с 40% рассудка.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h1>Тайэ</h1>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3><b>Тайэ</b> - старение: когда молодой очень активный, начинает охоту с 75% рассудка, очень быстрый, чем больше охот проведет тем быстрее он стареет, стареет даже вне охоты но дольше, на доске Уиджи может меняться возраст, когда постареет почти неактивный, охоту начинает с 15% рассудка и очень медленный.</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<br>
+    </div>
+    </div>
+
+<br>
+
+
+ <script src="js/script.js"></script>
+</body>
+</html>
